@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+    		<script src="lib/phaser.js"></script>
+            <script src="src/boot.js"></script>
+            <script src="src/preloader.js"></script>
+            <script src="src/menu.js"></script>
+            <script src="src/game.js"></script>
+            <link rel="stylesheet" type="text/css" href="css/style.css">
+            <script type="text/javascript">
+              WebFontConfig = {
+                google: { families: [ 'Audiowide::latin' ] }
+              };
+              (function() {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                  '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+              })(); 
+        </script>
+    </head>
+    <body>
+        <div id="container">
+        <script type="text/javascript">
+            window.onload = function() {
+                var game = new Phaser.Game(640, 480, Phaser.CANVAS, "container", null, null, null, null);
+                
+                game.state.add("Boot", this.Boot);
+                game.state.add("Preloader", this.Preloader);
+                game.state.add("Menu", this.Menu);
+                game.state.add("gameStart", this.gameStart);
+                game.state.start("Boot");
+            }
+        </script>
+        </div>
+    </body>
+</html>
