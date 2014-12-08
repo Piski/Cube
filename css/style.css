@@ -1,19 +1,44 @@
+@font-face {
+    font-family: "Red Alert";
+    src: url(fonts/RedAlert.ttf);
+}
+
+* {
+    font-family: 'Red Alert';
+}
+
 body {
     margin: 0;
+    background-color: #0C090A;
 }
 
 canvas {
-    border: 2px solid black;
+    border: 2px solid #0C090A;
     margin: auto;
 }
 
-.container {
-    position: absolute;
-    top: 5%;
+#container {
+    top: 3%;
 }
 
 .header {
     margin: auto;
     text-align: center;
     font-size: 100%;
+}
+
+#title {
+    color: white;
+    text-align: center;
+    border: none;
+}
+
+h1 {
+    font-size: 64px;
+}
+
+#description {
+    color: white;
+    text-align: center;
+    border: none;
 }

@@ -1,11 +1,14 @@
 <!doctype html>
 <html>
 	<head>
+            <meta charset="UTF-8">
     		<script src="lib/phaser.js"></script>
             <script src="src/boot.js"></script>
             <script src="src/preloader.js"></script>
             <script src="src/menu.js"></script>
+            <script src="src/instructions.js"></script>
             <script src="src/game.js"></script>
+            <script src="src/over.js"></script>
             <link rel="stylesheet" type="text/css" href="css/style.css">
             <script type="text/javascript">
               WebFontConfig = {
@@ -23,18 +26,22 @@
         </script>
     </head>
     <body>
+        <div id="title"><h1>CUBE</h1></div>
         <div id="container">
-        <script type="text/javascript">
-            window.onload = function() {
-                var game = new Phaser.Game(640, 480, Phaser.CANVAS, "container", null, null, null, null);
-                
-                game.state.add("Boot", this.Boot);
-                game.state.add("Preloader", this.Preloader);
-                game.state.add("Menu", this.Menu);
-                game.state.add("gameStart", this.gameStart);
-                game.state.start("Boot");
-            }
-        </script>
+            <script type="text/javascript">
+                window.onload = function() {
+                    var game = new Phaser.Game(640, 480, Phaser.CANVAS, "container", null, null, null, null);
+
+                    game.state.add("Boot", this.Boot);
+                    game.state.add("Preloader", this.Preloader);
+                    game.state.add("Menu", this.Menu);
+                    game.state.add("Instructions", this.Instructions);
+                    game.state.add("gameStart", this.gameStart);
+                    game.state.add("gameOver", this.gameOver);
+                    game.state.start("Boot");
+                }
+            </script>
         </div>
+        <div id="description"><p></p>© Sergei Liski<br> This game was made for a game programming class.</p></div>
     </body>
 </html>

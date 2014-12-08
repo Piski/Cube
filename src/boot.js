@@ -1,4 +1,4 @@
-var loadingBar;
+var loading;
 
 var Boot = function (game) {
     
@@ -11,8 +11,7 @@ var Boot = function (game) {
     },
       
     create: function() {
-        this.add.tileSprite(0, 0, 680, 480, "loading");
-        this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+        //this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
         this.scale.pageAlignHorizontally = true;
         this.scale.setScreenSize();
         this.state.start("Preloader");  
