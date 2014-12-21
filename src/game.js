@@ -71,6 +71,10 @@ gameStart.prototype = {
         switchMusicForward = this.input.keyboard.addKey(Phaser.Keyboard.RIGHT);
         switchMusicBack.onDown.add(this.switchMusicBack, this);
         switchMusicForward.onDown.add(this.switchMusicForward, this);
+        
+        // tehdään näyttöä varten uusi key
+        win = this.input.keyboard.addKey(Phaser.Keyboard.T);
+        win.onDown.add(this.win, this);
 
 
         // event listener for mouse down
@@ -82,6 +86,10 @@ gameStart.prototype = {
             align: "center"
         });
 
+    },
+    
+    win: function() {
+        this.state.start("gameOver");
     },
 
     switchMusicForward: function() {
